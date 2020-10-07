@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 var express     = require('express');
 var bodyParser  = require('body-parser');
 var expect      = require('chai').expect;
@@ -14,8 +15,6 @@ var app = express();
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
-
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
